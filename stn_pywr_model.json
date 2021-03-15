@@ -76,7 +76,7 @@
                 "Angels PH/Water Demand/2"
             ],
             "cost": [
-                -5000,
+                -50000,
                 "Angels PH/Cost/2",
                 "Angels PH/Cost/3"
             ],
@@ -185,7 +185,7 @@
                 "Collierville PH/Water Demand/2"
             ],
             "cost": [
-                -10000,
+                -200000,
                 "Collierville PH/Cost/2",
                 "Collierville PH/Cost/3"
             ],
@@ -588,7 +588,7 @@
             "name": "Murphys PH",
             "type": "Hydropower",
             "head": 208.5,
-            "cost": -4500.0,
+            "cost": -5000.0,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
@@ -679,7 +679,7 @@
         {
             "name": "Phoenix Canal Outflow",
             "type": "Output",
-            "cost": -30,
+            "cost": -33,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
@@ -2454,7 +2454,7 @@
         },
         "Angels PH/Turbine Capacity": {
             "type": "constant",
-            "value": 0.0976
+            "value": 0.125
         },
         "Angels PH/Water Demand/1": {
             "type": "PH_Water_Demand"
