@@ -76,7 +76,7 @@
                 "Angels PH/Water Demand/2"
             ],
             "cost": [
-                -50000,
+                "Angels PH/Cost/1",
                 "Angels PH/Cost/2",
                 "Angels PH/Cost/3"
             ],
@@ -107,6 +107,7 @@
             "initial_volume": 70.0,
             "max_volume": 121.45,
             "min_volume": 25,
+            "level": "Beardsley Reservoir/Elevation",
             "cost": "Beardsley Reservoir/Storage Value",
             "comment": "{\"resource_class\": \"node\"}",
             "gauge": "USGS 11292800 BEARDSLEY LAKE NEAR STRAWBERRY CA"
@@ -118,7 +119,7 @@
             "flow_capacity": "Beardsley PH/Turbine Capacity",
             "water_elevation_reservoir": "Beardsley Reservoir",
             "tailwater_elevation": 953.1,
-            "cost": -2000,
+            "cost": -1,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
@@ -180,12 +181,14 @@
             "head": 691.896,
             "turbine_capacity": "Collierville PH/Turbine Capacity",
             "flow_capacity": "Collierville PH/Turbine Capacity",
+            "spinning_cost": -10000000000,
+            "spinning_flow": 0.1,
             "max_flow": [
                 "Collierville PH/Water Demand/1",
                 "Collierville PH/Water Demand/2"
             ],
             "cost": [
-                -200000,
+                "Collierville PH/Cost/1",
                 "Collierville PH/Cost/2",
                 "Collierville PH/Cost/3"
             ],
@@ -212,12 +215,14 @@
             "head": 400,
             "turbine_capacity": "Donnells PH/Turbine Capacity",
             "flow_capacity": "Donnells PH/Turbine Capacity",
+            "spinning_cost": -10000000000,
+            "spinning_flow": 0.5,
             "max_flow": [
                 "Donnells PH/Water Demand/1",
                 "Donnells PH/Water Demand/2"
             ],
             "cost": [
-                -5000,
+                "Donnells PH/Cost/1",
                 "Donnells PH/Cost/2",
                 "Donnells PH/Cost/3"
             ],
@@ -616,7 +621,7 @@
             "name": "New Spicer Meadow Reservoir",
             "type": "Reservoir",
             "initial_volume": 120.0,
-            "max_volume": 235.72185,
+            "max_volume": 235.7,
             "min_volume": 50,
             "level": "New Spicer Meadow Reservoir/Elevation",
             "cost": "New Spicer Meadow Reservoir/Storage Value",
@@ -630,7 +635,7 @@
             "flow_capacity": "New Spicer Meadow PH/Turbine Capacity",
             "water_elevation_reservoir": "New Spicer Meadow Reservoir",
             "tailwater_elevation": 1940.1,
-            "cost": -1000000000,
+            "cost": -1,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
@@ -687,6 +692,8 @@
             "type": "Hydropower",
             "turbine_capacity": "Phoenix PH/Turbine Capacity",
             "flow_capacity": "Phoenix PH/Turbine Capacity",
+            "spinning_flow": 0.5,
+            "spinning_cost": -10000000000,
             "head": 361.7976,
             "max_flow": [
                 "Phoenix PH/Water Demand/1",
@@ -725,6 +732,8 @@
             "name": "Sand Bar PH",
             "type": "Hydropower",
             "head": 130,
+            "spinning_cost": -10000000000,
+            "spinning_flow": 0.5,
             "turbine_capacity": "Sand Bar PH/Turbine Capacity",
             "flow_capacity": "Sand Bar PH/Turbine Capacity",
             "max_flow": [
@@ -783,6 +792,8 @@
             "name": "Spring Gap PH",
             "type": "Hydropower",
             "head": 568.452,
+            "spinning_cost": -10000000000,
+            "spinning_flow": 0.5,
             "turbine_capacity": "Spring Gap PH/Turbine Capacity",
             "flow_capacity": "Spring Gap PH/Turbine Capacity",
             "max_flow": [
@@ -790,7 +801,7 @@
                 "Spring Gap PH/Water Demand/2"
             ],
             "cost": [
-                -25000,
+                "Spring Gap PH/Cost/1",
                 "Spring Gap PH/Cost/2",
                 "Spring Gap PH/Cost/3"
             ],
@@ -822,6 +833,8 @@
             "head": 463.296,
             "turbine_capacity": "Stanislaus PH/Turbine Capacity",
             "flow_capacity": "Stanislaus PH/Turbine Capacity",
+            "spinning_cost": -10000000000,
+            "spinning_flow": 0.5,
             "max_flow": [
                 "Stanislaus PH/Water Demand/1",
                 "Stanislaus PH/Water Demand/2"
@@ -2499,7 +2512,7 @@
         "Beardsley Reservoir/Elevation": {
             "type": "interpolatedvolume",
             "node": "Beardsley Reservoir",
-            "values": [
+            "values": [ 
                 953.1,
                 963.2,
                 966.2,
@@ -3005,7 +3018,7 @@
                 116.96,
                 154.49,
                 197.65,
-                227.24
+                235.7
             ],
             "kind": "cubic"
         },
@@ -3579,6 +3592,10 @@
         "Beardsley Reservoir/cost": {
             "type": "NumpyArrayParameterRecorder",
             "parameter": "Beardsley Reservoir/Storage Value"
+        },
+        "Beardsley Reservoir/elevation": {
+            "type": "NumpyArrayLevelRecorder",
+            "node": "Beardsley Reservoir"
         },
         "Beardsley Reservoir/observed storage": {
             "type": "NumpyArrayParameterRecorder",
